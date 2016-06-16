@@ -30,6 +30,11 @@ function initialize()
 			searchTweets($(this).val());
 		}
 	});
+	
+	$('#btn_search').on('click', function () {
+		searchTweets($(this).val());
+		return false;
+	});
 }
 
 function searchTweets(txt) {
@@ -50,8 +55,8 @@ function searchTweets(txt) {
 					var screen_name = v.user.screen_name
 					var tweetText = v.text;
 					var profileImageURL = v.user.profile_image_url;
-					var acc = v.user.name
-					
+					var acc = v.user.screen_name
+					//console.log(v.user);
 
 					marker = new google.maps.Marker({
 						position: new google.maps.LatLng(latitude, longitude),
@@ -63,6 +68,7 @@ function searchTweets(txt) {
 					var content = '@'+acc +' ข้อความ: ' + tweetText + '<br /> เมื่อ : ' + v.created_at;
 					var infowindow = new google.maps.InfoWindow();
 					
+					map.setZoom(4);
 
 					google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
 						return function () {
