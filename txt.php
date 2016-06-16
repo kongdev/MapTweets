@@ -25,10 +25,18 @@
 			<div class="map-canvas" id="map-canvas"></div>
 		</div>
 		
-		<div class="col-sm-11">
+		<div class="col-sm-10">
 			<div class="form-group">
 				<input type="text" class="form-control" id="gg_map" name="gg_map" placeholder="Search" />
 			</div>
+		</div>
+		<div class="col-sm-1">
+			<select id="type-res" name="type" class="form-control">
+				<option value="mixed">mixed</option>
+				<option value="recent">recent</option>
+				<option value="popular">popular</option>
+				
+			</select>
 		</div>
 		<div class="col-sm-1">
 			<button id="btn_search" type="button" class="btn btn-primary" autocomplete="off">Search</button>

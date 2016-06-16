@@ -18,7 +18,7 @@ function initialize()
 //	console.log(latlng);
 	var mapOptions = {
 		center: latlng,
-		zoom: 14,
+		zoom: 7,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -34,10 +34,10 @@ function initialize()
 
 function searchTweets(txt) {
 	var markersList = [];
-
+	var type = $('#type-res').val();
 	$.ajax({
 		dataType: 'json',
-		url: 'tweets.php?q=' + txt,
+		url: 'tweets.php?q=' + txt+'&type='+type,
 		success: function (json) {
 
 			$.each(json, function (k, v) {
@@ -50,6 +50,8 @@ function searchTweets(txt) {
 					var screen_name = v.user.screen_name
 					var tweetText = v.text;
 					var profileImageURL = v.user.profile_image_url;
+					var acc = v.user.name
+					
 
 					marker = new google.maps.Marker({
 						position: new google.maps.LatLng(latitude, longitude),
@@ -58,9 +60,9 @@ function searchTweets(txt) {
 						icon: profileImageURL
 					});
 					markersList.push(marker);
-					var content = 'Tweet : ' + tweetText + '<br /> When : ' + v.created_at;
+					var content = '@'+acc +' ข้อความ: ' + tweetText + '<br /> เมื่อ : ' + v.created_at;
 					var infowindow = new google.maps.InfoWindow();
-
+					
 
 					google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
 						return function () {
