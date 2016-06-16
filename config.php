@@ -4,5 +4,5 @@ $CONSUMER_KEY='AWRahKGsV6CCxH1pbdbsTIbN0';
 $CONSUMER_SECRET='gkxTu2M3ZslyDBaaNA5U9f2dDiFMSbSQ6ucYjo8z5SP6wr4vt4';
 $OAUTH_TOKEN='87202785-vWliq53GOdwgs29gvPUwpocAdw4MliMAp0FxkZRBd';
 $OAUTH_TOKEN_SECRET='FmUAonebdxOjWhQpyYs3OEpBE3T6slG4T4RfNxPOyqVFm';
-$radius = '50km';
+$radius = '100km';
 ?>
