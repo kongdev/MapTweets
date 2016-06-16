@@ -32,7 +32,7 @@ function initialize()
 	});
 	
 	$('#btn_search').on('click', function () {
-		searchTweets($(this).val());
+		searchTweets($('#gg_map').val());
 		return false;
 	});
 }

@@ -98,6 +98,7 @@ function searchLocation(lat, lng) {
 					var screen_name = v.user.screen_name
 					var tweetText = v.text;
 					var profileImageURL = v.user.profile_image_url;
+					var acc = v.user.screen_name
 
 					marker = new google.maps.Marker({
 						position: new google.maps.LatLng(latitude, longitude),
@@ -106,7 +107,7 @@ function searchLocation(lat, lng) {
 						icon: profileImageURL
 					});
 					markersList.push(marker);
-					var content = 'Tweet : '+tweetText+'<br /> When : '+v.created_at;  
+					var content = '@'+acc + ' Tweet : '+tweetText+'<br /> When : '+v.created_at;  
 					var infowindow = new google.maps.InfoWindow();
 					
 					
